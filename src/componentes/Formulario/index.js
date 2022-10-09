@@ -13,7 +13,7 @@ const Formulario = (props) => {
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState('');
 
-  const handleSubmit = (evento) => {
+  const aoSalvar = (evento) => {
     evento.preventDefault();
     props.aoCadastrar({
       nome, 
@@ -22,10 +22,14 @@ const Formulario = (props) => {
       time
     })
     console.log("Form foi submetido =>", nome, cargo, imagem, time);
+    setNome('');
+    setCargo('');
+    setImagem('');
+    setTime('');
   };
   return (
     <section className="formulario">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card</h2>
         <CampoTexto
           obrigatorio={true}
