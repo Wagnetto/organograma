@@ -2,7 +2,7 @@ import './CampoTexto.css'
 
 const CampoTexto = (props) => {
 
-    const placeholderModificada = `Blabla... ${props.placeholder}...`;
+    const placeholderModificada = `Insert ${props.placeholder}`;
     
     const aoDigitado = (evento) => {
         props.aoAlterado(evento.target.value)

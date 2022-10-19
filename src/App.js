@@ -7,37 +7,37 @@ import Time from "./componentes/Time";
 function App() {
   const times = [
     {
-      nome: "Programação",
+      nome: "Road Riders",
       corPrimaria: "#57c278",
       corSecundaria: "#d9f7e9",
     },
     {
-      nome: "Front-End",
+      nome: "Mountain Bikers",
       corPrimaria: "#82cffa",
       corSecundaria: "#e8f8ff",
     },
     {
-      nome: "Data Science",
+      nome: "Team Sprint",
       corPrimaria: "#a6d157",
       corSecundaria: "#f0f8e2",
     },
     {
-      nome: "DevOps",
+      nome: "BMX Freestyle",
       corPrimaria: "#e06b69",
       corSecundaria: "#fde7e8",
     },
     {
-      nome: "UX e Design",
+      nome: "Time Trial",
       corPrimaria: "#db6ebf",
       corSecundaria: "#fae9f5",
     },
     {
-      nome: "Mobile",
+      nome: "Gravel",
       corPrimaria: "#ffba05",
       corSecundaria: "#fff5d9",
     },
     {
-      nome: "Inovação e Gestão",
+      nome: "Fixed Gear",
       corPrimaria: "#ff8a29",
       corSecundaria: "#ffeedf",
     },
@@ -45,7 +45,6 @@ function App() {
   const [colaboradores, setColaboradores] = useState([]);
   const aoAdicionar = (colaborador) => {
     setColaboradores([...colaboradores, colaborador]);
-    console.log(colaboradores);
   };
   return (
     <div className="App">
@@ -60,7 +59,9 @@ function App() {
           nome={time.nome}
           corDestaque={time.corPrimaria}
           corDeFundo={time.corSecundaria}
-          colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+          colaboradores={colaboradores.filter(
+            (colaborador) => colaborador.time === time.nome
+          )}
         />
       ))}
       <Rodape />
